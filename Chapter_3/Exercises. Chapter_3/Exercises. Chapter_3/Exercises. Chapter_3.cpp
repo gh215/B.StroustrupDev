@@ -1,4 +1,4 @@
-#include <iostream>
+п»ї#include <iostream>
 #include <algorithm>
 #include <string>
 #include <map>
@@ -11,10 +11,10 @@ void miles_to_km()
 	const double km_per_mile = 1.609;
 	double miles = 0;
 	double kilometrs = 0;
-	cout << "Введите количество километров, которые вы хотите перевести в метры: ";
+	cout << "Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ РєРёР»РѕРјРµС‚СЂРѕРІ, РєРѕС‚РѕСЂС‹Рµ РІС‹ С…РѕС‚РёС‚Рµ РїРµСЂРµРІРµСЃС‚Рё РІ РјРµС‚СЂС‹: ";
 	cin >> miles;
 	kilometrs = miles * km_per_mile;
-	cout << "Итого миль: " << miles << endl;
+	cout << "РС‚РѕРіРѕ РјРёР»СЊ: " << miles << endl;
 }
 
 void calc()
@@ -24,25 +24,25 @@ void calc()
 	int difference;
 	int multiplication;
 	int division;
-	cout << "\tВведите два числа";
-	cout << "\nВведите первое число: ";
+	cout << "\tР’РІРµРґРёС‚Рµ РґРІР° С‡РёСЃР»Р°";
+	cout << "\nР’РІРµРґРёС‚Рµ РїРµСЂРІРѕРµ С‡РёСЃР»Рѕ: ";
 	cin >> val1;
-	cout << "\nВведите второе число: ";
+	cout << "\nР’РІРµРґРёС‚Рµ РІС‚РѕСЂРѕРµ С‡РёСЃР»Рѕ: ";
 	cin >> val2;
 
 	if (val1 > val2)
 	{
-		cout << "Наибольше число : " << val1 << endl;
-		cout << "Наименьшее число : " << val2 << endl;
+		cout << "РќР°РёР±РѕР»СЊС€Рµ С‡РёСЃР»Рѕ : " << val1 << endl;
+		cout << "РќР°РёРјРµРЅСЊС€РµРµ С‡РёСЃР»Рѕ : " << val2 << endl;
 	}
 	else if (val1 == val2)
 	{
-		cout << "Числа равны!" << endl;
+		cout << "Р§РёСЃР»Р° СЂР°РІРЅС‹!" << endl;
 	}
 	else
 	{
-		cout << "Наибольше число : " << val2 << endl;
-		cout << "Наименьшее число : " << val1 << endl;
+		cout << "РќР°РёР±РѕР»СЊС€Рµ С‡РёСЃР»Рѕ : " << val2 << endl;
+		cout << "РќР°РёРјРµРЅСЊС€РµРµ С‡РёСЃР»Рѕ : " << val1 << endl;
 	}
 
 	addition = val1 + val2;
@@ -50,7 +50,7 @@ void calc()
 	multiplication = val1 * val2;
 	if (val2 == 0)
 	{
-		cout << "Ошибка, нельзя делить на 0" << endl;
+		cout << "РћС€РёР±РєР°, РЅРµР»СЊР·СЏ РґРµР»РёС‚СЊ РЅР° 0" << endl;
 		return;
 	}
 	else
@@ -58,8 +58,8 @@ void calc()
 		division = val1 / val2;
 	}
 
-	cout << "\nСложение: " << addition << "\nВычитание: " << difference <<
-		"\nУмножение: " << multiplication << "\nДеление: " << division;
+	cout << "\nРЎР»РѕР¶РµРЅРёРµ: " << addition << "\nР’С‹С‡РёС‚Р°РЅРёРµ: " << difference <<
+		"\nРЈРјРЅРѕР¶РµРЅРёРµ: " << multiplication << "\nР”РµР»РµРЅРёРµ: " << division;
 }
 
 void calc_d()
@@ -69,25 +69,25 @@ void calc_d()
 	double difference;
 	double multiplication;
 	double division;
-	cout << "\tВведите два числа";
-	cout << "\nВведите первое число: ";
+	cout << "\tР’РІРµРґРёС‚Рµ РґРІР° С‡РёСЃР»Р°";
+	cout << "\nР’РІРµРґРёС‚Рµ РїРµСЂРІРѕРµ С‡РёСЃР»Рѕ: ";
 	cin >> val1;
-	cout << "\nВведите второе число: ";
+	cout << "\nР’РІРµРґРёС‚Рµ РІС‚РѕСЂРѕРµ С‡РёСЃР»Рѕ: ";
 	cin >> val2;
 
 	if (val1 > val2)
 	{
-		cout << "Наибольше число : " << val1 << endl;
-		cout << "Наименьшее число : " << val2 << endl;
+		cout << "РќР°РёР±РѕР»СЊС€Рµ С‡РёСЃР»Рѕ : " << val1 << endl;
+		cout << "РќР°РёРјРµРЅСЊС€РµРµ С‡РёСЃР»Рѕ : " << val2 << endl;
 	}
 	else if (val1 == val2)
 	{
-		cout << "Числа равны!" << endl;
+		cout << "Р§РёСЃР»Р° СЂР°РІРЅС‹!" << endl;
 	}
 	else
 	{
-		cout << "Наибольше число : " << val2 << endl;
-		cout << "Наименьшее число : " << val1 << endl;
+		cout << "РќР°РёР±РѕР»СЊС€Рµ С‡РёСЃР»Рѕ : " << val2 << endl;
+		cout << "РќР°РёРјРµРЅСЊС€РµРµ С‡РёСЃР»Рѕ : " << val1 << endl;
 	}
 
 	addition = val1 + val2;
@@ -95,7 +95,7 @@ void calc_d()
 	multiplication = val1 * val2;
 	if (val2 == 0)
 	{
-		cout << "Ошибка, нельзя делить на 0" << endl;
+		cout << "РћС€РёР±РєР°, РЅРµР»СЊР·СЏ РґРµР»РёС‚СЊ РЅР° 0" << endl;
 		return;
 	}
 	else
@@ -103,21 +103,21 @@ void calc_d()
 		division = val1 / val2;
 	}
 
-	cout << "\nСложение: " << addition << "\nВычитание: " << difference <<
-		"\nУмножение: " << multiplication << "\nДеление: " << division;
+	cout << "\nРЎР»РѕР¶РµРЅРёРµ: " << addition << "\nР’С‹С‡РёС‚Р°РЅРёРµ: " << difference <<
+		"\nРЈРјРЅРѕР¶РµРЅРёРµ: " << multiplication << "\nР”РµР»РµРЅРёРµ: " << division;
 }
 
 void in_order_numbers()
 {
 	int numbers[3];
-	cout << "Введите три целых числа: ";
+	cout << "Р’РІРµРґРёС‚Рµ С‚СЂРё С†РµР»С‹С… С‡РёСЃР»Р°: ";
 	for (int i = 0; i < 3; ++i) 
 	{
 		cin >> numbers[i];
 	}
 
 	sort(numbers, numbers + 3);
-	cout << "Числа в порядке возрастания: ";
+	cout << "Р§РёСЃР»Р° РІ РїРѕСЂСЏРґРєРµ РІРѕР·СЂР°СЃС‚Р°РЅРёСЏ: ";
 	string sep;
 	for (int i = 0; i < 3; ++i) 
 	{
@@ -132,14 +132,14 @@ void in_order_names()
 {
 	string names[3];
 	string sep;
-	cout << "Введите три имени: ";
+	cout << "Р’РІРµРґРёС‚Рµ С‚СЂРё РёРјРµРЅРё: ";
 	for (int i = 0; i < 3; ++i)
 	{
 		cin >> names[i];
 	}
 
 	sort(names, names + 3);
-	cout << "Числа в порядке возрастания: ";
+	cout << "Р§РёСЃР»Р° РІ РїРѕСЂСЏРґРєРµ РІРѕР·СЂР°СЃС‚Р°РЅРёСЏ: ";
 	for (int i = 0; i < 3; ++i)
 	{
 		cout << sep << names[i];
@@ -151,16 +151,16 @@ void in_order_names()
 void parity_of_numbers()
 {
 	int number;
-	cout << "Введите целое число: ";
+	cout << "Р’РІРµРґРёС‚Рµ С†РµР»РѕРµ С‡РёСЃР»Рѕ: ";
 	cin >> number;
 
 	if (number % 2 == 0)
 	{
-		cout << "Число " << number << " является четным." << endl;
+		cout << "Р§РёСЃР»Рѕ " << number << " СЏРІР»СЏРµС‚СЃСЏ С‡РµС‚РЅС‹Рј." << endl;
 	}
 	else
 	{
-		cout << "Число " << number << " является нечетным." << endl;
+		cout << "Р§РёСЃР»Рѕ " << number << " СЏРІР»СЏРµС‚СЃСЏ РЅРµС‡РµС‚РЅС‹Рј." << endl;
 	}
 
 }
@@ -182,11 +182,11 @@ void wordToNumber()
 		{"nine", 9}
 	};
 
-	cout << "Введите число в виде слова: ";
+	cout << "Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ РІ РІРёРґРµ СЃР»РѕРІР°: ";
 	cin >> word;
 	if (dic.count(word) != 1)
 	{
-		cout << "Я не знаю такого числа" << endl;
+		cout << "РЇ РЅРµ Р·РЅР°СЋ С‚Р°РєРѕРіРѕ С‡РёСЃР»Р°" << endl;
 	}
 	else
 	{
@@ -200,46 +200,46 @@ void perf_arithm_oper()
 	string operation;
 	double operand1, operand2;
 
-	cout << "Введите операцию (+, -, *, /,): ";
+	cout << "Р’РІРµРґРёС‚Рµ РѕРїРµСЂР°С†РёСЋ (+, -, *, /,): ";
 	cin >> operation;
 
-	cout << "Введите первый операнд: ";
+	cout << "Р’РІРµРґРёС‚Рµ РїРµСЂРІС‹Р№ РѕРїРµСЂР°РЅРґ: ";
 	cin >> operand1;
 
-	cout << "Введите второй операнд: ";
+	cout << "Р’РІРµРґРёС‚Рµ РІС‚РѕСЂРѕР№ РѕРїРµСЂР°РЅРґ: ";
 	cin >> operand2;
 
 	if (operation == "+") 
 	{
-		cout << "Результат: " << operand1 + operand2 << endl;
+		cout << "Р РµР·СѓР»СЊС‚Р°С‚: " << operand1 + operand2 << endl;
 	}
 	else if (operation == "-") 
 	{
-		cout << "Результат: " << operand1 - operand2 << endl;
+		cout << "Р РµР·СѓР»СЊС‚Р°С‚: " << operand1 - operand2 << endl;
 	}
 	else if (operation == "*") 
 	{
-		cout << "Результат: " << operand1 * operand2 << endl;
+		cout << "Р РµР·СѓР»СЊС‚Р°С‚: " << operand1 * operand2 << endl;
 	}
 	else if (operation == "/") 
 	{
 		if (operand2 != 0) 
 		{
-			cout << "Результат: " << operand1 / operand2 << endl;
+			cout << "Р РµР·СѓР»СЊС‚Р°С‚: " << operand1 / operand2 << endl;
 		}
-		cout << "Ошибка: деление на ноль" << endl;
+		cout << "РћС€РёР±РєР°: РґРµР»РµРЅРёРµ РЅР° РЅРѕР»СЊ" << endl;
 
 	}
 	else
 	{
-		cout << "Неизвестная операция" << endl;
+		cout << "РќРµРёР·РІРµСЃС‚РЅР°СЏ РѕРїРµСЂР°С†РёСЏ" << endl;
 	}
 }
 
 int how_much_money(string kind)
 {
 	int coins;
-	cout << "Сколько у вас " << kind <<  " монет ? ";
+	cout << "РЎРєРѕР»СЊРєРѕ Сѓ РІР°СЃ " << kind <<  " РјРѕРЅРµС‚ ? ";
 	cin >> coins;
 	return coins;
 }
@@ -249,77 +249,77 @@ void cents()
 	int oneCent = 0, fiveCents = 0, tenCents = 0, twentyFiveCents = 0, fiftyCents = 0, dollarCents = 0;
 	int totalCents = 0;
 
-	oneCent = how_much_money("одноцентовых");
+	oneCent = how_much_money("РѕРґРЅРѕС†РµРЅС‚РѕРІС‹С…");
 	totalCents += oneCent;
 
-	fiveCents = how_much_money("пятицентовых");
+	fiveCents = how_much_money("РїСЏС‚РёС†РµРЅС‚РѕРІС‹С…");
 	totalCents += fiveCents * 5;
 
-	tenCents = how_much_money("десятицентовых");
+	tenCents = how_much_money("РґРµСЃСЏС‚РёС†РµРЅС‚РѕРІС‹С…");
 	totalCents += tenCents * 10;
 
-	twentyFiveCents = how_much_money("двадцатипятицентовых");
+	twentyFiveCents = how_much_money("РґРІР°РґС†Р°С‚РёРїСЏС‚РёС†РµРЅС‚РѕРІС‹С…");
 	totalCents += twentyFiveCents * 25;
 
-	fiftyCents = how_much_money("пятидесятицентовых");
+	fiftyCents = how_much_money("РїСЏС‚РёРґРµСЃСЏС‚РёС†РµРЅС‚РѕРІС‹С…");
 	totalCents += fiftyCents * 50;
 
-	dollarCents = how_much_money("долларовых");
+	dollarCents = how_much_money("РґРѕР»Р»Р°СЂРѕРІС‹С…");
 	totalCents += dollarCents * 100;
 
 	if (oneCent == 1)
 	{
-		cout << "У вас " << oneCent << " одноцентовая монета." << endl;
+		cout << "РЈ РІР°СЃ " << oneCent << " РѕРґРЅРѕС†РµРЅС‚РѕРІР°СЏ РјРѕРЅРµС‚Р°." << endl;
 	}
 	else
 	{
-		cout << "У вас " << oneCent << " одноцентовых монет." << endl;
+		cout << "РЈ РІР°СЃ " << oneCent << " РѕРґРЅРѕС†РµРЅС‚РѕРІС‹С… РјРѕРЅРµС‚." << endl;
 	}
 	if (fiveCents == 1)
 	{
-		cout << "У вас " << fiveCents << " пятицентовая монета." << endl;
+		cout << "РЈ РІР°СЃ " << fiveCents << " РїСЏС‚РёС†РµРЅС‚РѕРІР°СЏ РјРѕРЅРµС‚Р°." << endl;
 	}
 	else
 	{
-		cout << "У вас " << fiveCents << " пятицентовых монет." << endl;
+		cout << "РЈ РІР°СЃ " << fiveCents << " РїСЏС‚РёС†РµРЅС‚РѕРІС‹С… РјРѕРЅРµС‚." << endl;
 	}
 	if (tenCents == 1)
 	{
-		cout << "У вас " << tenCents << " десятицентовая монета." << endl;
+		cout << "РЈ РІР°СЃ " << tenCents << " РґРµСЃСЏС‚РёС†РµРЅС‚РѕРІР°СЏ РјРѕРЅРµС‚Р°." << endl;
 	}
 	else
 	{
-		cout << "У вас " << tenCents << " десятицентовых монет." << endl;
+		cout << "РЈ РІР°СЃ " << tenCents << " РґРµСЃСЏС‚РёС†РµРЅС‚РѕРІС‹С… РјРѕРЅРµС‚." << endl;
 	}
 	if (twentyFiveCents == 1)
 	{
-		cout << "У вас " << twentyFiveCents << " двадцатипятицентовая монета." << endl;
+		cout << "РЈ РІР°СЃ " << twentyFiveCents << " РґРІР°РґС†Р°С‚РёРїСЏС‚РёС†РµРЅС‚РѕРІР°СЏ РјРѕРЅРµС‚Р°." << endl;
 	}
 	else
 	{
-		cout << "У вас " << twentyFiveCents << " двадцатипятицентовых монет." << endl;
+		cout << "РЈ РІР°СЃ " << twentyFiveCents << " РґРІР°РґС†Р°С‚РёРїСЏС‚РёС†РµРЅС‚РѕРІС‹С… РјРѕРЅРµС‚." << endl;
 	}
 	if (fiftyCents == 1)
 	{
-		cout << "У вас " << fiftyCents << " пятидесятицентовая монета." << endl;
+		cout << "РЈ РІР°СЃ " << fiftyCents << " РїСЏС‚РёРґРµСЃСЏС‚РёС†РµРЅС‚РѕРІР°СЏ РјРѕРЅРµС‚Р°." << endl;
 	}
 	else
 	{
-		cout << "У вас " << fiftyCents << " пятидесятицентовых монет." << endl;
+		cout << "РЈ РІР°СЃ " << fiftyCents << " РїСЏС‚РёРґРµСЃСЏС‚РёС†РµРЅС‚РѕРІС‹С… РјРѕРЅРµС‚." << endl;
 	}
 	if (dollarCents == 1)
 	{
-		cout << "У вас " << dollarCents << " долларовая монета." << endl;
+		cout << "РЈ РІР°СЃ " << dollarCents << " РґРѕР»Р»Р°СЂРѕРІР°СЏ РјРѕРЅРµС‚Р°." << endl;
 	}
 	else
 	{
-		cout << "У вас " << dollarCents << " долларовых монет." << endl;
+		cout << "РЈ РІР°СЃ " << dollarCents << " РґРѕР»Р»Р°СЂРѕРІС‹С… РјРѕРЅРµС‚." << endl;
 	}
 
 	int dollars = totalCents / 100;
 	int cents = totalCents % 100;
 
-	cout << "Общая стоимость ваших монет равна " << dollars << " долларов " << cents << " цента." << endl;
+	cout << "РћР±С‰Р°СЏ СЃС‚РѕРёРјРѕСЃС‚СЊ РІР°С€РёС… РјРѕРЅРµС‚ СЂР°РІРЅР° " << dollars << " РґРѕР»Р»Р°СЂРѕРІ " << cents << " С†РµРЅС‚Р°." << endl;
 }
 
 
@@ -327,6 +327,6 @@ void cents()
 int main()
 {
 	setlocale(LC_ALL, "Russian");
-	//Проверка сохранения русского языка
+	//РџСЂРѕРІРµСЂРєР° СЃРѕС…СЂР°РЅРµРЅРёСЏ СЂСѓСЃСЃРєРѕРіРѕ СЏР·С‹РєР°
 	cents();
 }
