@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <string>
 #include <algorithm>
 #include <vector>
@@ -15,38 +15,38 @@ void ex1_5()
 
 	while (true)
 	{
-		cout << "\nÂâåäèòå äâà ÷èñëà. Äëÿ âûõîäà ââåäèòå ñèìâîë '|'\n";
-		cout << "Ïåðâîå ÷èñëî: ";
+		cout << "\nÐ’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð´Ð²Ð° Ñ‡Ð¸ÑÐ»Ð°. Ð”Ð»Ñ Ð²Ñ‹Ñ…Ð¾Ð´Ð° Ð²Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑÐ¸Ð¼Ð²Ð¾Ð» '|'\n";
+		cout << "ÐŸÐµÑ€Ð²Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾: ";
 		cin >> input;
 		if (input == "|") break;
 		a = stod(input);
 
-		cout << "Âòîðîå ÷èñëî: ";
+		cout << "Ð’Ñ‚Ð¾Ñ€Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾: ";
 		cin >> input;
 		if (input == "|") break;
 		b = stod(input);
 
 		cout << fixed;
 		cout.precision(2);
-		cout << "Âîò îíè, ÷èñëà: " << a << " è " << b << endl;
+		cout << "Ð’Ð¾Ñ‚ Ð¾Ð½Ð¸, Ñ‡Ð¸ÑÐ»Ð°: " << a << " Ð¸ " << b << endl;
 
 		if (a == b)
 		{
-			cout << "×èñëà ðàâíû!" << endl;
+			cout << "Ð§Ð¸ÑÐ»Ð° Ñ€Ð°Ð²Ð½Ñ‹!" << endl;
 		}
 		else if (abs(a - b) <= difference)
 		{
-			cout << "×èñëà ïî÷òè ðàâíû" << endl;
+			cout << "Ð§Ð¸ÑÐ»Ð° Ð¿Ð¾Ñ‡Ñ‚Ð¸ Ñ€Ð°Ð²Ð½Ñ‹" << endl;
 		}
 		else if (a > b)
 		{
-			cout << "Íàèìåíüøåå çíà÷åíèå ðàâíî: " << b << endl;
-			cout << "Íàèáîëüøåå çíà÷åíèå ðàâíî: " << a << endl;
+			cout << "ÐÐ°Ð¸Ð¼ÐµÐ½ÑŒÑˆÐµÐµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ Ñ€Ð°Ð²Ð½Ð¾: " << b << endl;
+			cout << "ÐÐ°Ð¸Ð±Ð¾Ð»ÑŒÑˆÐµÐµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ Ñ€Ð°Ð²Ð½Ð¾: " << a << endl;
 		}
 		else
 		{
-			cout << "Íàèìåíüøåå çíà÷åíèå ðàâíî: " << a << endl;
-			cout << "Íàèáîëüøåå çíà÷åíèå ðàâíî: " << b << endl;
+			cout << "ÐÐ°Ð¸Ð¼ÐµÐ½ÑŒÑˆÐµÐµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ Ñ€Ð°Ð²Ð½Ð¾: " << a << endl;
+			cout << "ÐÐ°Ð¸Ð±Ð¾Ð»ÑŒÑˆÐµÐµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ Ñ€Ð°Ð²Ð½Ð¾: " << b << endl;
 		}
 	}
 }
@@ -58,19 +58,19 @@ void ex6()
 	string input;
 	while (true)
 	{
-		cout << "\nÂâåäèòå ÷èñëî. Äëÿ âûõîäà ââåäèòå ñèìâîë '|'\n";
+		cout << "\nÐ’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ‡Ð¸ÑÐ»Ð¾. Ð”Ð»Ñ Ð²Ñ‹Ñ…Ð¾Ð´Ð° Ð²Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑÐ¸Ð¼Ð²Ð¾Ð» '|'\n";
 		cin >> input;
 		if (input == "|") break;
 		a = stod(input);
 		if (a < minVal)
 		{
 			minVal = a;
-			cout << "Òåêóùåå ìèí. çíà÷åíèå: " << minVal << endl;
+			cout << "Ð¢ÐµÐºÑƒÑ‰ÐµÐµ Ð¼Ð¸Ð½. Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ: " << minVal << endl;
 		}
 		if (a > maxVal)
 		{
 			maxVal = a;
-			cout << "Òåêóùåå ìàêñ. çíà÷åíèå: " << maxVal << endl;
+			cout << "Ð¢ÐµÐºÑƒÑ‰ÐµÐµ Ð¼Ð°ÐºÑ. Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ: " << maxVal << endl;
 		}
 	}
 }
@@ -81,7 +81,7 @@ double convertToMeters(string unit, double value)
 	if (unit == "m") return value;
 	if (unit == "in") return value * (2.54 / 100.0);
 	if (unit == "ft") return value * (12 * 2.54 / 100.0);
-	cout << "Íåâåðíàÿ åäèíèöà èçìåðåíèÿ!" << endl;
+	cout << "ÐÐµÐ²ÐµÑ€Ð½Ð°Ñ ÐµÐ´Ð¸Ð½Ð¸Ñ†Ð° Ð¸Ð·Ð¼ÐµÑ€ÐµÐ½Ð¸Ñ!" << endl;
 	return -1;
 }
 
@@ -95,7 +95,7 @@ void ex7_11()
 	int count = 0;
 	while (true)
 	{
-		cout << "\nÂâåäèòå ÷èñëî. Ââåäèòå åäèíèöó èçìåðåíèÿ (cm, m, in èëè ft). Äëÿ âûõîäà ââåäèòå ñèìâîë '|'\n";
+		cout << "\nÐ’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ‡Ð¸ÑÐ»Ð¾. Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐµÐ´Ð¸Ð½Ð¸Ñ†Ñƒ Ð¸Ð·Ð¼ÐµÑ€ÐµÐ½Ð¸Ñ (cm, m, in Ð¸Ð»Ð¸ ft). Ð”Ð»Ñ Ð²Ñ‹Ñ…Ð¾Ð´Ð° Ð²Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑÐ¸Ð¼Ð²Ð¾Ð» '|'\n";
 		getline(cin, input);
 		if (input == "|") break;
 
@@ -105,7 +105,7 @@ void ex7_11()
 		
 		result = convertToMeters(unit, a);
 
-		if (result == -1) continue; // Ïðîïóñêàåì íåâåðíûå çíà÷åíèÿ
+		if (result == -1) continue; // ÐŸÑ€Ð¾Ð¿ÑƒÑÐºÐ°ÐµÐ¼ Ð½ÐµÐ²ÐµÑ€Ð½Ñ‹Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ
 		if (result < minVal)
 		{
 			minVal = result;
@@ -114,9 +114,9 @@ void ex7_11()
 		{
 			maxVal = result;
 		}
-		cout << "Òåêóùåå çíà÷åíèå: " << result << endl;
-		cout << "Òåêóùåå ìèí. çíà÷åíèå: " << minVal << endl;
-		cout << "Òåêóùåå ìàêñ. çíà÷åíèå: " << maxVal << endl;
+		cout << "Ð¢ÐµÐºÑƒÑ‰ÐµÐµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ: " << result << endl;
+		cout << "Ð¢ÐµÐºÑƒÑ‰ÐµÐµ Ð¼Ð¸Ð½. Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ: " << minVal << endl;
+		cout << "Ð¢ÐµÐºÑƒÑ‰ÐµÐµ Ð¼Ð°ÐºÑ. Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ: " << maxVal << endl;
 
 		values.push_back(result);
 		sum += result;
@@ -125,14 +125,14 @@ void ex7_11()
 
 	sort(values.begin(), values.end());
 
-	cout << "Íàèáîëüøåå ââåä¸ííîå çíà÷åíèå: " << maxVal << endl;
-	cout << "Íàèìåíüøåå ââåä¸ííîå çíà÷åíèå: " << minVal << endl;
-	cout << "Ñóììà ââåäåííûõ çíà÷åíèé: " << sum << " ì" << endl;
-	cout << "Êîëè÷åñòâî ââåäåííûõ çíà÷åíèé: " << count << endl;
+	cout << "ÐÐ°Ð¸Ð±Ð¾Ð»ÑŒÑˆÐµÐµ Ð²Ð²ÐµÐ´Ñ‘Ð½Ð½Ð¾Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ: " << maxVal << endl;
+	cout << "ÐÐ°Ð¸Ð¼ÐµÐ½ÑŒÑˆÐµÐµ Ð²Ð²ÐµÐ´Ñ‘Ð½Ð½Ð¾Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ: " << minVal << endl;
+	cout << "Ð¡ÑƒÐ¼Ð¼Ð° Ð²Ð²ÐµÐ´ÐµÐ½Ð½Ñ‹Ñ… Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ð¹: " << sum << " Ð¼" << endl;
+	cout << "ÐšÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ Ð²Ð²ÐµÐ´ÐµÐ½Ð½Ñ‹Ñ… Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ð¹: " << count << endl;
 
 	for (double value : values)
 	{
-		cout << value << " ì" << endl;
+		cout << value << " Ð¼" << endl;
 	}
 }
 
