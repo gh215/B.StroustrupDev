@@ -74,8 +74,8 @@ double ex6_ftoc(double f)
 
 int ex7_func(int a, int b, int c)
 {
-	int x1, x2;
-	int D = pow(b, 2) - (4 * a * c);
+	double x1, x2;
+	double D = pow(b, 2) - (4 * a * c);
 
 	if (D > 0)
 	{
@@ -111,11 +111,15 @@ vector<int> ex8_readNumbers()
 			break;
 		}
 
-		stringstream iss(input);
-		while (iss >> number)
+		if (input.find('.') != string::npos)
 		{
-			numbers.push_back(number);
+			cout << "Нельзя вводить значения типа double. Введите другое число." << endl;
+			continue;
 		}
+
+		stringstream iss(input);
+		iss >> number;
+		numbers.push_back(number);
 	}
 
 	return numbers;
@@ -159,7 +163,7 @@ vector<double> ex10_readNumbers()
 vector<double> ex10_calculateDifferences(const vector<double>& numbers)
 {
 	vector<double> differences;
-	for (size_t i = 1; i < numbers.size(); ++i)
+	for (int i = 1; i < numbers.size(); ++i)
 	{
 		//тут вычисляется разность между текущем элементом numbers[i] и предыдущим numbers[i - 1];
 		differences.push_back(numbers[i] - numbers[i - 1]);
@@ -178,29 +182,21 @@ double ex10_sumFirstNumbers(const vector<double>& num, int n)
 	return sum;
 }
 
-vector<int> generateNumber() 
-{
-
-	vector<int> digits = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-	random_shuffle(digits.begin(), digits.end()); 
-	return vector<int>(digits.begin(), digits.begin() + 4);
-}
-
-void countBullsAndCows(const vector<int>& secret, const vector<int>& guess, int& bulls, int& cows) 
+void countBullsAndCows(const vector<int>& secret, const vector<int>& guess, int& bulls, int& cows)
 {
 	bulls = 0;
 	cows = 0;
-	for (int i = 0; i < 4; ++i) 
+	for (int i = 0; i < 4; ++i)
 	{
-		if (secret[i] == guess[i]) 
+		if (secret[i] == guess[i])
 		{
 			++bulls;
 		}
-		else 
+		else
 		{
-			for (int j = 0; j < 4; ++j) 
+			for (int j = 0; j < 4; ++j)
 			{
-				if (secret[i] == guess[j]) 
+				if (secret[i] == guess[j])
 				{
 					++cows;
 					break;
@@ -208,6 +204,75 @@ void countBullsAndCows(const vector<int>& secret, const vector<int>& guess, int&
 			}
 		}
 	}
+}
+
+void playGame_ex12(const vector<int> secret, int attempts)
+{
+	while (true)
+	{
+		cout << "Введите ваше предположение (четырехзначное число): ";
+		vector<int> guess(4);
+		for (int i = 0; i < 4; ++i)
+		{
+			cin >> guess[i];
+		}
+
+		int bulls = 0, cows = 0;
+		countBullsAndCows(secret, guess, bulls, cows);
+
+		cout << "Быки: " << bulls << ", Коровы: " << cows << endl;
+		++attempts;
+
+		if (bulls == 4)
+		{
+			cout << "Поздравляем Вы угадали число за " << attempts << " попыток." << endl;
+			break;
+		}
+	}
+}
+
+void playGame_ex13(int num1, int num2, int num3, int num4)
+{
+	char playAgain = 'y';
+	while (playAgain == 'y')
+	{
+		vector<int> secret({ num1, num2, num3, num4 });
+		int attempts = 0;
+
+		cout << "Введите ваше предположение (четырехзначное число): ";
+		vector<int> guess(4);
+		for (int i = 0; i < 4; ++i)
+		{
+			cin >> guess[i];
+		}
+
+		int bulls = 0, cows = 0;
+		countBullsAndCows(secret, guess, bulls, cows);
+
+		cout << "Быки: " << bulls << ", Коровы: " << cows << endl;
+		++attempts;
+
+		if (bulls == 4)
+		{
+			cout << "Поздравляем Вы угадали число за " << attempts << " попыток." << endl;
+			cout << "Хотите сыграть еще раз? (y/n): ";
+			cin >> playAgain;
+
+			while (playAgain != 'y' && playAgain != 'n')
+			{
+				cout << "Неверно введённое значение. Попробуйте ещё раз!" << endl;
+				continue;
+			}
+			
+		}
+	}
+}
+
+vector<int> generateNumber()
+{
+	vector<int> digits = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+	random_shuffle(digits.begin(), digits.end());
+	return vector<int>(digits.begin(), digits.begin() + 4);
 }
 
 void ex2()
@@ -279,7 +344,7 @@ void ex7()
 void ex8_9()
 {
 	vector<int> total_numbers = ex8_readNumbers();
-	size_t sum_numbers;
+	int sum_numbers;
 
 	cout << "Введите количество суммируемых значений: ";
 	do
@@ -292,23 +357,16 @@ void ex8_9()
 		}
 	} while (sum_numbers > total_numbers.size());
 
-	size_t sum = ex8_sumFirstNumbers(total_numbers, sum_numbers);
+	int sum = ex8_sumFirstNumbers(total_numbers, sum_numbers);
 
+	cout << "Сумма первых " << sum_numbers << " чисел (";
 
-	if (sum != numeric_limits<int>::max())
+	for (unsigned int i = 0; i < sum_numbers; ++i)
 	{
-		cout << "Сумма первых " << sum_numbers << " чисел (";
+		cout << total_numbers[i] << " ";
+	}
+	cout << ") равна " << sum << "." << endl;
 
-		for (size_t i = 0; i < sum_numbers; ++i)
-		{
-			cout << total_numbers[i] << " ";
-		}
-		cout << ") равна " << sum << "." << endl;
-	}
-	else
-	{
-		cout << "Ошибка: результат не может быть представлен в виде int." << endl;
-	}
 }
 
 void ex10()
@@ -345,27 +403,27 @@ void ex10()
 	}
 }
 
+
 void ex11()
 {
-	int a = 0;
-	int b = 1;
-	int next_number;
+	long long a = 0;
+	long long b = 1;
+	long long next_number = 0;
+
+	cout << numeric_limits<long long>::max() << endl;
 
 	while (true)
 	{
-		next_number = a + b;
-		a = b;
-		//Проверяет, не приведет ли сложение a и b к переполнению. Если INT_MAX - a меньше b, это означает, что a + b будет больше INT_MAX
-		if (INT_MAX - a < b)
+		//исправить условие
+		if (next_number > numeric_limits<long long>::max() - b)
 		{
 			break;
 		}
-		else
-		{
-			b = next_number;
-		}
+		next_number = a + b;
+		a = b;
+		b = next_number;
 	}
-	cout << "Макс. возможное значение числа: " << b << endl;
+	cout << "Макс. возможное значение числа: " << next_number << endl;
 }
 
 void ex12()
@@ -374,84 +432,89 @@ void ex12()
 	vector<int> secret = generateNumber();
 	int attempts = 0;
 
-	while (true)
-	{
-		cout << "Введите ваше предположение (четырехзначное число): ";
-		vector<int> guess(4);
-		for (int i = 0; i < 4; ++i)
-		{
-			cin >> guess[i];
-		}
-
-		int bulls = 0, cows = 0;
-		countBullsAndCows(secret, guess, bulls, cows);
-
-		cout << "Быки: " << bulls << ", Коровы: " << cows << endl;
-		++attempts;
-
-		if (bulls == 4) 
-		{
-			cout << "Поздравляем Вы угадали число за " << attempts << " попыток." << endl;
-			break;
-		}
-	}
+	playGame_ex12(secret, attempts);
 }
+
 
 void ex13()
 {
 	cout << "Введите начальное значение для генерации случайных чисел: ";
 	int seed;
 	cin >> seed;
-	seed = tolower(seed);
-	srand(seed);
+	seed_randint(time(0));
 
-	char playAgain = 'y';
-	while (playAgain == 'y' || playAgain != 'n')
+	int num1 = randint(10);
+	int num2 = randint(10);
+	int num3 = randint(10);
+	int num4 = randint(10);
+
+	playGame_ex13(num1, num2, num3, num4);
+}
+
+
+bool equal(string e, string c)
+{
+	// Преобраджение строк к нижнему регистру
+	transform(e.begin(), e.end(), e.begin(), ::tolower);
+	transform(c.begin(), c.end(), c.begin(), ::tolower);
+
+	// Сначала проверяем полное совпадение строк
+	if (e == c) return true;
+
+	// Смотрим, соответсвует ли строка одному из сокращений из 3х символов
+	if (e.substr(0, 3) == c) return true;
+
+	return false;
+}
+
+void enterValue_ex14(const vector<string>& daysOfWeek, int& rejectedCount, vector<int>& weekSums)
+{
+	string inputDay;
+	int inputValue;
+
+	while (cin >> inputDay >> inputValue)
 	{
-		// Генерация четырех случайных чисел
-		int num1 = randint(10);
-		int num2 = randint(10);
-		int num3 = randint(10);
-		int num4 = randint(10);
+		bool validDay = false;
 
-		cout << "Сгенерированные числа: " << num1 << ", " << num2 << ", " << num3 << ", " << num4 << endl;
+		if (inputDay == "e")
+		{
+			break;
+		}
 
-		cout << "Хотите сыграть еще раз? (y/n): ";
-		cin >> playAgain;
+		for (int i = 0; i < daysOfWeek.size(); ++i)
+		{
+			if (equal(daysOfWeek[i], inputDay))
+			{
+				weekSums[i] += inputValue;
+				validDay = true;
+				break;
+			}
+		}
+		if (!validDay)
+		{
+			rejectedCount++;
+		}
 	}
+
+	cout << "Сумма значений для каждого дня недели:" << endl;
+	for (int i = 0; i < daysOfWeek.size(); ++i)
+	{
+		cout << daysOfWeek[i] << ": " << weekSums[i] << endl;
+	}
+
+	cout << "Количество отвергнутых чисел: " << rejectedCount << endl;
 }
 
 void ex14()
 {
-	map<string, vector<int>> daysValues;
-	string day;
-	int value;
+	vector<string> daysOfWeek = { "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday" };
+	// Вектор для хранения сумм значений для каждого дня недели
+	vector<int> weekSums(7, 0);
 	int rejectedCount = 0;
 
-	while (cin >> day >> value) 
-	{
-		if (day == "mon" || day == "tue" || day == "wed" || day == "thu" || day == "fri" || day == "sat" || day == "sun") 
-		{
-			//Если введенный день недели соответствует одному из разрешенных сокращений, то значение добавляется в вектор, ассоциированный с этим днем в daysValues
-			daysValues[day].push_back(value);
-		}
-		else 
-		{
-			++rejectedCount;
-		}
-	}
+	cout << "Введите пары (день недели, значение) или 'e', чтобы закончить ввод:" << endl;
 
-	for (auto& pair : daysValues) 
-	{
-		int sum = 0;
-		for (int val : pair.second) 
-		{
-			sum += val;
-		}
-		cout << pair.first << ": " << sum << endl;
-	}
-
-	cout << "Отвергнуто чисел: " << rejectedCount << endl;
+	enterValue_ex14(daysOfWeek, rejectedCount, weekSums);
 }
 
 int main()
