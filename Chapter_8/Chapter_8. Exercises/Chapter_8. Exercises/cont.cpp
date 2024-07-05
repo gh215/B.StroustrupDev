@@ -1,4 +1,4 @@
-#include "head.h"
+п»ї#include "head.h"
 
 void print_ex2(const string& comment, const vector<int>& v) 
 {
@@ -48,7 +48,7 @@ void PeopleCount_ex7()
     vector<string> name;
     vector<double> age;
 
-    cout << "Введите 5 имен:\n";
+    cout << "Р’РІРµРґРёС‚Рµ 5 РёРјРµРЅ:\n";
     for (int i = 0; i < 5; ++i) 
     {
         string temp;
@@ -56,16 +56,16 @@ void PeopleCount_ex7()
         name.push_back(temp);
     }
 
-    cout << "Введите возраст для каждого имени:\n";
+    cout << "Р’РІРµРґРёС‚Рµ РІРѕР·СЂР°СЃС‚ РґР»СЏ РєР°Р¶РґРѕРіРѕ РёРјРµРЅРё:\n";
     for (const auto& n : name) 
     {
-        cout << "Возраст для " << n << ": ";
+        cout << "Р’РѕР·СЂР°СЃС‚ РґР»СЏ " << n << ": ";
         double temp;
         cin >> temp;
         age.push_back(temp);
     }
 
-    cout << "Исходные пары (имя, возраст):\n";
+    cout << "РСЃС…РѕРґРЅС‹Рµ РїР°СЂС‹ (РёРјСЏ, РІРѕР·СЂР°СЃС‚):\n";
     for (size_t i = 0; i < name.size(); ++i) 
     {
         cout << name[i] << ": " << age[i] << endl;
@@ -79,7 +79,7 @@ void PeopleCount_ex7()
 
     sort(name_age_pairs.begin(), name_age_pairs.end());
 
-    cout << "\nОтсортированные пары (имя, возраст):\n";
+    cout << "\nРћС‚СЃРѕСЂС‚РёСЂРѕРІР°РЅРЅС‹Рµ РїР°СЂС‹ (РёРјСЏ, РІРѕР·СЂР°СЃС‚):\n";
     for (const auto& pair : name_age_pairs) 
     {
         cout << pair.first << ": " << pair.second << endl;
@@ -91,7 +91,7 @@ double sumOfProducts_ex8(const vector<double>& price, const vector<double>& weig
 {
     if (price.size() != weight.size()) 
     {
-        throw invalid_argument("Векторы должны иметь одинаковый размер");
+        throw invalid_argument("Р’РµРєС‚РѕСЂС‹ РґРѕР»Р¶РЅС‹ РёРјРµС‚СЊ РѕРґРёРЅР°РєРѕРІС‹Р№ СЂР°Р·РјРµСЂ");
     }
 
     double sum = 0;
@@ -115,7 +115,7 @@ int maxv_ex9(const vector<int>& vec)
 void ex3_print()
 {
     vector<int> fib_numbers = fibonacci_ex3(1, 2, {}, 10);
-    print_ex2("Числа Фибоначчи", fib_numbers);
+    print_ex2("Р§РёСЃР»Р° Р¤РёР±РѕРЅР°С‡С‡Рё", fib_numbers);
 }
 
 void ex5_print()
