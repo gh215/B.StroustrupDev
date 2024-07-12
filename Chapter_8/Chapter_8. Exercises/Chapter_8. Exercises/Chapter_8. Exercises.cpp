@@ -3,5 +3,5 @@
 int main()
 {
 	setlocale(LC_ALL, "Russian");
-	ex8_print();
+	ex10_print();
 }
