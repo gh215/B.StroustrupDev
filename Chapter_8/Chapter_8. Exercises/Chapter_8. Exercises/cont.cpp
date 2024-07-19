@@ -172,14 +172,19 @@ int maxv_ex9(const vector<int>& vec)
 	return max_value;
 }
 
+/*
+void analyseVector_ex10(const vector<int>& vec, int& min, int& max, double& average, double& median) 
+*/
+
 VectorStats analyseVector_ex10(const vector<int>& vec) 
 {
 	VectorStats result;
 
 	if (vec.empty()) 
 	{
-		return { 0, 0, 0.0, 0.0 };
+		throw exception("Пустой вектор");
 	}
+
 
 	result.min = *min_element(vec.begin(), vec.end());
 	result.max = *max_element(vec.begin(), vec.end());
@@ -193,6 +198,7 @@ VectorStats analyseVector_ex10(const vector<int>& vec)
 
 	vector<int> sorted_vec = vec;
 	sort(sorted_vec.begin(), sorted_vec.end());
+
 	if (sorted_vec.size() % 2 == 0) 
 	{
 		result.median = (sorted_vec[sorted_vec.size() / 2 - 1] + sorted_vec[sorted_vec.size() / 2]);
@@ -205,27 +211,32 @@ VectorStats analyseVector_ex10(const vector<int>& vec)
 	return result;
 }
 
-void print_until_s_ex11(const std::vector<std::string>& v, const std::string& quit) 
+bool print_until_s_ex11(const vector<string>& v, const string& quit) 
 {
 	for (const auto& s : v) 
 	{
-		if (s == quit) return;
+		if (s == quit) return true;
 		cout << s << '\n';
 	}
+
+	return false;
 }
 
-void print_until_ss_ex11(const std::vector<std::string>& v, const std::string& quit)
+bool print_until_ss_ex11(const vector<string>& v, const string& quit)
 {
 	int count = 0;
+	const int stop_word_max_count = 2;
 	for (const auto& s : v) 
 	{
 		if (s == quit) 
 		{
 			count++;
-			if (count == 2) return;
+			if (count == stop_word_max_count) return true;
 		}
 		cout << s << '\n';
 	}
+
+	return false;
 }
 
 /*
@@ -363,31 +374,36 @@ void ex10_print()
 
 void ex11_tests()
 {
-	string quit = "stop";
+	string quit = "quit";
+
+	cout << "Тест 0:\n";
+	vector<string> test0 = {"a", "b", "s"};
+	print_until_s_ex11(test0, quit);
+	cout << "\n";
 
 	cout << "Тест 1: Пустой вектор\n";
 	vector<string> test1 = {};
-	print_until_ss_ex11(test1, quit);
+	print_until_s_ex11(test1, quit);
 	cout << "\n";
 
 	cout << "Тест 2: Вектор, где строка quit отсутствует\n";
 	vector<string> test2 = { "apple", "banana", "cherry", "date" };
-	print_until_ss_ex11(test2, quit);
+	print_until_s_ex11(test2, quit);
 	cout << "\n";
 
 	cout << "Тест 3: Вектор, где строка quit находится в начале\n";
 	vector<string> test3 = { "stop", "apple", "banana", "cherry", "date" };
-	print_until_ss_ex11(test3, quit);
+	print_until_s_ex11(test3, quit);
 	cout << "\n";
 
 	cout << "Тест 4: Вектор, где строка quit находится в конце\n";
 	vector<string> test4 = { "apple", "banana", "cherry", "date", "stop" };
-	print_until_ss_ex11(test4, quit);
+	print_until_s_ex11(test4, quit);
 	cout << "\n";
 
 	cout << "Тест 5: Вектор, где строка quit встречается несколько раз\n";
 	vector<string> test5 = { "apple", "stop", "banana", "stop", "cherry", "date" };
-	print_until_ss_ex11(test5, quit);
+	print_until_s_ex11(test5, quit);
 }
 
 void ex12_print()
