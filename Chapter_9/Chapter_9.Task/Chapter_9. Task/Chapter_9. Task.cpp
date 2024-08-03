@@ -12,18 +12,6 @@ void init_day(Date_9_4_1& dd, int y, int m, int d)
     dd.d = d;
 }
 
-void init_day(Date_9_4_2& dd, int y, int m, int d)
-{
-    if (!correct_date(m, d))
-    {
-        cerr << "Некорректная дата\n";
-        return;
-    }
-    dd.y = y;
-    dd.m = m;
-    dd.d = d;
-}
-
 void add_day_9_4_1(Date_9_4_1& dd, int n)
 {
     dd.d += n;
@@ -204,6 +192,18 @@ void test_9_4_3()
 
     cout << "Сегодня: " << today << endl;
     cout << "Завтра: " << tomorrow << endl;
+
+    cout << "\nПроверка некорректной даты:\n";
+    try
+    {
+        Date_9_4_3 invalid_date(2009, 13, -5);
+    }
+    catch (invalid_argument& e)
+    {
+        cout << e.what() << endl;
+    }
+
+
 }
 
 void test_9_7_1()
