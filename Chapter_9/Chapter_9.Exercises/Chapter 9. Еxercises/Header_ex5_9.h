@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include <iostream>
 #include <vector>
 #include <string>
@@ -32,7 +32,7 @@ public:
     Book(const string& isbn, const string& title, const string& author, const string& copyrightDate, Genre genre)
         : isbn(isbn), title(title), author(author), copyrightDate(copyrightDate), genre(genre), isOnHands(false) 
     {
-        if (!checkISBN(isbn)) throw invalid_argument("Неверный формат ISBN");
+        if (!checkISBN(isbn)) throw invalid_argument("РќРµРІРµСЂРЅС‹Р№ С„РѕСЂРјР°С‚ ISBN");
     }
 
     string getISBN() const { return isbn; }

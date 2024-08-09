@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include <iostream>
 #include <vector>
 #include <string>
@@ -52,13 +52,13 @@ public:
 		days_since_epoch = date_to_days(y, m, d);
 	}
 
-	// Преобразование даты в количество дней с 1 января 1970
+	// РџСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёРµ РґР°С‚С‹ РІ РєРѕР»РёС‡РµСЃС‚РІРѕ РґРЅРµР№ СЃ 1 СЏРЅРІР°СЂСЏ 1970
 	long date_to_days(int year, int month, int day);
 
-	// Преобразование количества дней в дату
+	// РџСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёРµ РєРѕР»РёС‡РµСЃС‚РІР° РґРЅРµР№ РІ РґР°С‚Сѓ
 	void days_to_date(long days, int& year, int& month, int& day);
 
-	// Получение текущего дня, месяца и года
+	// РџРѕР»СѓС‡РµРЅРёРµ С‚РµРєСѓС‰РµРіРѕ РґРЅСЏ, РјРµСЃСЏС†Р° Рё РіРѕРґР°
 	int days_in_month(int y, int m);
 
 	int day() 
@@ -81,7 +81,7 @@ public:
 		days_to_date(days_since_epoch, year, month, day);
 		return year;
 	}
-	// Добавление дней к дате
+	// Р”РѕР±Р°РІР»РµРЅРёРµ РґРЅРµР№ Рє РґР°С‚Рµ
 	void add_day(int n) { days_since_epoch += n; }
 };
 
@@ -129,7 +129,7 @@ public:
 
 	bool operator==(const Rational& other)
 	{
-		// сравниваем числители и знаменатели
+		// СЃСЂР°РІРЅРёРІР°РµРј С‡РёСЃР»РёС‚РµР»Рё Рё Р·РЅР°РјРµРЅР°С‚РµР»Рё
 		return numerator == other.numerator && denominator == other.denominator;
 	}
 
@@ -159,7 +159,7 @@ public:
 	{
 		if (!is_representable(amount))
 		{
-			throw invalid_argument("Сумма не может быть точно представлена с помощью long int центов");
+			throw invalid_argument("РЎСѓРјРјР° РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ С‚РѕС‡РЅРѕ РїСЂРµРґСЃС‚Р°РІР»РµРЅР° СЃ РїРѕРјРѕС‰СЊСЋ long int С†РµРЅС‚РѕРІ");
 		}
 		cents = round(amount * 100);
 	}
@@ -172,7 +172,7 @@ public:
 	{
 		if (currency != other.currency)
 		{
-			throw invalid_argument("Невозможно прибавить деньги в разных валютах без таблицы конвертации");
+			throw invalid_argument("РќРµРІРѕР·РјРѕР¶РЅРѕ РїСЂРёР±Р°РІРёС‚СЊ РґРµРЅСЊРіРё РІ СЂР°Р·РЅС‹С… РІР°Р»СЋС‚Р°С… Р±РµР· С‚Р°Р±Р»РёС†С‹ РєРѕРЅРІРµСЂС‚Р°С†РёРё");
 		}
 		return Money(cents + other.cents, currency);
 	}
@@ -181,7 +181,7 @@ public:
 	{
 		if (currency != other.currency)
 		{
-			throw invalid_argument("Невозможно вычесть деньги в разных валютах без таблицы конвертации");
+			throw invalid_argument("РќРµРІРѕР·РјРѕР¶РЅРѕ РІС‹С‡РµСЃС‚СЊ РґРµРЅСЊРіРё РІ СЂР°Р·РЅС‹С… РІР°Р»СЋС‚Р°С… Р±РµР· С‚Р°Р±Р»РёС†С‹ РєРѕРЅРІРµСЂС‚Р°С†РёРё");
 		}
 		return Money(cents - other.cents, currency);
 	}
@@ -196,8 +196,8 @@ public:
 		string input;
 		is >> input;
 
-		string curr = input.substr(0, 3);  // первые три символа - валюта
-		double amount = stod(input.substr(3));  // остальное - сумма
+		string curr = input.substr(0, 3);  // РїРµСЂРІС‹Рµ С‚СЂРё СЃРёРјРІРѕР»Р° - РІР°Р»СЋС‚Р°
+		double amount = stod(input.substr(3));  // РѕСЃС‚Р°Р»СЊРЅРѕРµ - СЃСѓРјРјР°
 
 		m = Money(amount, curr);
 		return is;
