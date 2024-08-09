@@ -3,6 +3,6 @@
 
 int main()
 {
-    setlocale(LC_ALL, "Russian");
-    print_ex9();
+	setlocale(LC_ALL, "Russian");
+	ex18();
 }

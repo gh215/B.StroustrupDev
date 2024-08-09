@@ -18,13 +18,13 @@ ostream& operator<<(ostream& os, const Book& book)
     return os;
 }
 
-void Library::handleTransaction(const Book& book, const Patron& patron)
+bool Library::handleTransaction(const Book& book, const Patron& patron)
 {
     bool isPatronMember = false;
     if (!patron.hasPaidMemberships()) 
     {
         cout << "Ошибка: Посетитель не оплатил членские взносы.\n";
-        return;
+        return false;
     }
 
     for (const auto& p : patrons) 
@@ -39,25 +39,26 @@ void Library::handleTransaction(const Book& book, const Patron& patron)
     if (!isPatronMember) 
     {
         cout << "Ошибка: Посетитель не является членом библиотеки." << endl;
-        return;
+        return false;
     }
 
     auto it = find(books.begin(), books.end(), book);
     if (it == books.end())
     {
         cout << "Ошибка: Книга не найдена в библиотеке." << endl;
-        return;
+        return false;
     }
 
     if (it->isOnHand())
     {
         cout << "Ошибка: Книга уже занята." << endl;
-        return;
+        return false;
     }
 
     it->giveBook(); 
-    transactions.push_back(Transaction(*it, patron, Date(2024, 8, 02)));
+    transactions.push_back(Transaction(*it, patron, Date5_9(2024, 8, 02)));
     cout << "Книга успешно выдана владельцу." << endl;
+    return true;
 }
 
 vector<string> Library::getDebtors() const
@@ -71,6 +72,21 @@ vector<string> Library::getDebtors() const
         }
     }
     return debtors;
+}
+
+bool Book::checkISBN(string isbn)
+{
+    istringstream iss(isbn);
+    int n1, n2, n3;
+    char c1, c2, c3, c4;
+    string rem;
+
+    iss >> n1 >> c1 >> n2 >> c2 >> n3 >> c3 >> c4 >> rem;
+    if (rem.size() != 0) return false;
+    if (c1 != '-' || c2 != '-' || c3 != '-') return false;
+    if (n1 <= 0 || n2 <= 0 || n3 <= 0) return false;
+    if (!isalnum(c4)) return false;
+    return true;
 }
 
 void print_ex5_6() 
@@ -147,3 +163,4 @@ void print_ex9()
     // Обработка транзакции выдачи книги пользователю
     library.handleTransaction(book, patron);
 }
+
